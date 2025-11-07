@@ -98,6 +98,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 25px 0;
+            position: relative;
         }
 
         .logo {
@@ -106,6 +107,7 @@
             font-weight: 700;
             color: white;
             text-decoration: none;
+            z-index: 1001;
         }
 
         .nav-links {
@@ -127,6 +129,21 @@
 
         .nav-links a:hover {
             color: #d4af37;
+        }
+
+        /* Бургер-меню */
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s ease;
         }
 
         .hero {
@@ -434,6 +451,18 @@
             color: #777;
         }
 
+        /* Анимация для мобильного меню */
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         /* Адаптивность */
         @media screen and (max-width: 768px) {
             .hero {
@@ -466,8 +495,44 @@
                 flex-direction: column;
             }
 
+            /* Мобильное меню */
+            .burger {
+                display: block;
+            }
+            
             .nav-links {
-                display: none;
+                position: fixed;
+                right: -100%;
+                top: 0;
+                height: 100vh;
+                width: 70%;
+                background: #1a2a3a;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 25px 0;
+                opacity: 0;
+            }
+            
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+            
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
             }
 
             .contact-info {
@@ -515,6 +580,11 @@
                     <li><a href="#why-me">Преимущества</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
             </nav>
 
             <div class="hero">
@@ -669,7 +739,7 @@
                     <div class="contact-icon">📞</div>
                     <div class="contact-details">
                         <h4>Телефон</h4>
-                        <p><a href="tel:+79999999999">+7 (926) 276-43-10</a></p>
+                        <p><a href="tel:+7-926-276-43-10">+7 (926) 276-43-10</a></p>
                     </div>
                 </div>
                 
@@ -729,6 +799,39 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Бургер-меню
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            // Переключение навигации
+            nav.classList.toggle('active');
+            
+            // Анимация ссылок
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            
+            // Анимация бургера
+            burger.classList.toggle('toggle');
+        });
+
+        // Закрытие меню при клике на ссылку
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(link => {
+                    link.style.animation = '';
+                });
             });
         });
     </script>
