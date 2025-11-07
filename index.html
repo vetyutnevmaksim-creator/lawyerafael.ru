@@ -156,16 +156,31 @@
             line-height: 1.4;
         }
 
-        .hero-stats {
-            display: flex;
-            gap: 50px;
+        .stats-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px 30px;
             margin: 3rem 0 4rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stats-title {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #d4af37;
+            font-weight: 500;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
         .stat {
             text-align: center;
+            padding: 20px;
         }
 
         .stat-number {
@@ -175,12 +190,13 @@
             color: #d4af37;
             font-family: 'Playfair Display', serif;
             line-height: 1;
+            margin-bottom: 0.5rem;
         }
 
         .stat-text {
             font-size: 1rem;
             opacity: 0.9;
-            margin-top: 5px;
+            line-height: 1.4;
         }
 
         /* Обо мне */
@@ -433,7 +449,12 @@
             }
 
             .hero-stats {
-                gap: 30px;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-section {
+                padding: 30px 20px;
                 margin: 2rem 0 3rem;
             }
 
@@ -472,10 +493,6 @@
                 font-size: 2rem;
             }
 
-            .hero-stats {
-                gap: 20px;
-            }
-
             .stat-number {
                 font-size: 1.8rem;
             }
@@ -505,18 +522,25 @@
                 <p class="hero-subtitle fade-in delay-1">Защита бизнеса и корпоративные споры</p>
                 <p class="hero-subtitle fade-in delay-2">Профессиональное юридическое сопровождение с 2004 года</p>
                 
-                <div class="hero-stats fade-in delay-3">
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-text">лет успешной практики</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">3</span>
-                        <span class="stat-text">международные компании в опыте</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-text">личное ведение дел</span>
+                <div class="stats-section fade-in delay-3">
+                    <div class="stats-title">АДВОКАТСКИЙ КАБИНЕТ РАФАЭЛЯ КОСТАНЯНА - ЭТО:</div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">18+</span>
+                            <span class="stat-text">лет успешной юридической практики</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">>95%</span>
+                            <span class="stat-text">результативность в судебных делах</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">>500 млн ₽</span>
+                            <span class="stat-text">отсудили для клиентов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-text">сопровождение вашего бизнеса</span>
+                        </div>
                     </div>
                 </div>
                 
@@ -534,7 +558,7 @@
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Адвокат Рафаэль Костанян">
                 </div>
                 <div class="about-text">
-                    <h2 class="fade-in">Профессиональный адвокат</h2>
+                    <h2 class="fade-in">Обо мне</h2>
                     <p class="fade-in delay-1">Практикую юриспруденцию с 2004 года. Лично сопровождаю и защищаю бизнес в судах, в налоговых и других вопросах более 15 лет.</p>
                     
                     <ul class="experience-list">
