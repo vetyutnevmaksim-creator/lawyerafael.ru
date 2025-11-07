@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Адвокатский кабинет Рафаэля Костаняна | Юридические услуги в Москве</title>
-    <meta name="description" content="Профессиональная юридическая помощь адвоката Рафаэля Костаняна. Защита ваших интересов в суде, уголовные, гражданские, арбитражные дела. Конфиденциально.">
+    <title>Адвокат Рафаэль Костанян | Защита бизнеса и корпоративные споры</title>
+    <meta name="description" content="Адвокат Рафаэль Костанян. Сопровождение бизнеса, корпоративные споры, налоговые вопросы. Опыт с 2004 года. Конфиденциально.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Сброс и базовые стили */
         * {
             margin: 0;
             padding: 0;
@@ -21,6 +20,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -39,8 +39,8 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: #8B4513; /* Тёмно-коричневый, цвет солидности */
+            padding: 14px 35px;
+            background-color: #8B4513;
             color: #fff;
             text-decoration: none;
             border: none;
@@ -49,23 +49,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
+            font-size: 1.1rem;
         }
 
         .btn:hover {
             background-color: #6b3410;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid #8B4513;
-            color: #8B4513;
-        }
-
-        .btn-secondary:hover {
-            background-color: #8B4513;
-            color: white;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         section {
@@ -76,9 +66,25 @@
             text-align: center;
         }
 
+        /* Анимации */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+
         /* Шапка */
         header {
-            background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             color: white;
             min-height: 100vh;
             display: flex;
@@ -117,20 +123,7 @@
         }
 
         .nav-links a:hover {
-            color: #d4af37; /* Золотой акцент */
-        }
-
-        .burger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .burger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px;
-            transition: all 0.3s ease;
+            color: #d4af37;
         }
 
         .hero {
@@ -138,21 +131,24 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            max-width: 700px;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: white;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
+            max-width: 600px;
         }
 
         /* Обо мне */
@@ -185,13 +181,33 @@
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 1.5rem;
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
             color: #555;
+            font-size: 1.1rem;
+        }
+
+        .experience-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .experience-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-list li:before {
+            content: "•";
+            color: #8B4513;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         /* Услуги */
@@ -227,11 +243,11 @@
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
         }
 
-        /* Почему я */
+        /* Преимущества */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -255,7 +271,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Контакты и CTA */
+        /* Контакты */
         .contact-section {
             background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             color: white;
@@ -264,19 +280,21 @@
 
         .contact-section h2 {
             color: white;
+            font-size: 2.5rem;
         }
 
         .contact-section p {
             max-width: 700px;
             margin: 0 auto 2rem;
             opacity: 0.9;
+            font-size: 1.2rem;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
             margin-top: 40px;
         }
 
@@ -299,40 +317,12 @@
             text-align: center;
         }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         .footer-logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
             color: white;
             margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            list-style: none;
-            margin: 20px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .footer-links li {
-            margin: 0 15px;
-        }
-
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
         }
 
         .copyright {
@@ -343,78 +333,31 @@
 
         /* Адаптивность */
         @media screen and (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-            }
-
-            .nav-links {
-                position: absolute;
-                right: 0;
-                height: 92vh;
-                top: 8vh;
-                background-color: #1a2a3a;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 50%;
-                transform: translateX(100%);
-                transition: transform 0.5s ease-in;
-                z-index: 1000;
-            }
-
-            .nav-links li {
-                opacity: 0;
-                margin: 25px 0;
-            }
-
-            .burger {
-                display: block;
-            }
-
-            .nav-active {
-                transform: translateX(0%);
-            }
-
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
             }
 
             .about-content {
                 flex-direction: column;
             }
 
-            .about-img, .about-text {
-                flex: none;
-                width: 100%;
+            .nav-links {
+                display: none;
             }
 
-            @keyframes navLinkFade {
-                from {
-                    opacity: 0;
-                    transform: translateX(50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-
-            .toggle .line1 {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .toggle .line2 {
-                opacity: 0;
-            }
-
-            .toggle .line3 {
-                transform: rotate(45deg) translate(-5px, -6px);
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Шапка и навигация -->
+    <!-- Шапка -->
     <header>
         <div class="container">
             <nav>
@@ -422,132 +365,130 @@
                 <ul class="nav-links">
                     <li><a href="#about">Обо мне</a></li>
                     <li><a href="#services">Услуги</a></li>
-                    <li><a href="#why-me">Почему я</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
             </nav>
 
             <div class="hero">
-                <h1>Ваша надёжная защита в юридических вопросах</h1>
-                <p>Профессиональная помощь адвоката с многолетним опытом. Комплексный подход к решению ваших проблем с гарантией конфиденциальности.</p>
-                <a href="#contacts" class="btn">Получить консультацию</a>
+                <h1 class="fade-in">Защита вашего бизнеса</h1>
+                <p class="fade-in delay-1">Профессиональное юридическое сопровождение с 2004 года</p>
+                <a href="#contacts" class="btn fade-in delay-2">Получить консультацию</a>
             </div>
         </div>
     </header>
 
-    <!-- Секция "Обо мне" -->
+    <!-- Обо мне -->
     <section id="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-img">
-                    <!-- ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА РЕАЛЬНОЕ ФОТО РАФАЭЛЯ -->
+                <div class="about-img fade-in">
+                    <!-- ЗАМЕНИТЕ НА РЕАЛЬНОЕ ФОТО -->
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Адвокат Рафаэль Костанян">
                 </div>
                 <div class="about-text">
-                    <h2>Адвокат Костанян Рафаэль</h2>
-                    <p>Я — профессиональный адвокат с многолетним опытом работы в юридической сфере. Моя практика охватывает широкий спектр областей права, включая уголовное, гражданское, арбитражное и административное судопроизводство.</p>
-                    <p>Моя главная цель — обеспечить максимальную защиту прав и интересов моих клиентов, используя глубокие знания законодательства и обширную судебную практику. Каждое дело я веду персонально, уделяя внимание всем деталям и находя индивидуальный подход к каждой ситуации.</p>
-                    <p>Я гарантирую полную конфиденциальность, честность и прозрачность нашего сотрудничества на всех этапах работы.</p>
-                    <a href="#contacts" class="btn btn-secondary">Связаться со мной</a>
+                    <h2 class="fade-in">Рафаэль Костанян</h2>
+                    <p class="fade-in delay-1">Практикую юриспруденцию с 2004 года. Лично сопровождаю и защищаю бизнес в судах, в налоговых и других вопросах более 15 лет.</p>
+                    
+                    <ul class="experience-list">
+                        <li class="fade-in delay-1">Ex-партнер международной юридической фирмы Integrities</li>
+                        <li class="fade-in delay-2">Консультант Ernst & Young</li>
+                        <li class="fade-in delay-3">Советник российской судебной фирмы "Муранов, Черняков и партнеры"</li>
+                    </ul>
+                    
+                    <p class="fade-in delay-3">Специализируюсь на комплексной защите бизнеса и корпоративных спорах.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция "Услуги" -->
+    <!-- Услуги -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="text-center">Мои услуги</h2>
-            <p class="text-center" style="max-width: 700px; margin: 0 auto;">Я предоставляю полный спектр юридических услуг для физических и юридических лиц.</p>
+            <h2 class="text-center fade-in">Мои услуги</h2>
+            <p class="text-center fade-in delay-1" style="max-width: 700px; margin: 0 auto;">Специализированная юридическая помощь для бизнеса</p>
             
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card fade-in">
                     <div class="service-icon">⚖️</div>
-                    <h3>Уголовные дела</h3>
-                    <p>Защита на следствии и в суде по всем категориям уголовных дел. Консультации, сбор доказательств, построение линии защиты.</p>
+                    <h3>Корпоративные споры</h3>
+                    <p>Защита интересов в спорах между акционерами, участниками и руководством компаний</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">📊</div>
+                    <h3>Налоговые вопросы</h3>
+                    <p>Сопровождение налоговых проверок, защита в налоговых спорах</p>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Арбитражные дела</h3>
+                    <p>Представление интересов в арбитражных судах по экономическим спорам</p>
+                </div>
+
+                <div class="service-card fade-in">
                     <div class="service-icon">📝</div>
                     <h3>Гражданские споры</h3>
-                    <p>Разрешение споров в сфере гражданского права: жилищные, семейные, трудовые, наследственные дела, защита прав потребителей.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🏛️</div>
-                    <h3>Арбитражные споры</h3>
-                    <p>Представление интересов в арбитражных судах по экономическим спорам, банкротству, корпоративным конфликтам.</p>
+                    <p>Разрешение споров в сфере договорного права и обязательств</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card fade-in delay-1">
                     <div class="service-icon">🏢</div>
-                    <h3>Юридическое сопровождение бизнеса</h3>
-                    <p>Абонентское обслуживание компаний, правовой аудит, составление договоров, представительство в госорганах.</p>
+                    <h3>Сопровождение бизнеса</h3>
+                    <p>Полное юридическое сопровождение деятельности компаний</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🚔</div>
-                    <h3>Административные дела</h3>
-                    <p>Защита при привлечении к административной ответственности, обжалование действий должностных лиц.</p>
-                </div>
-
-                <div class="service-card">
+                <div class="service-card fade-in delay-2">
                     <div class="service-icon">🔍</div>
-                    <h3>Правовой анализ и консультации</h3>
-                    <p>Подробный анализ вашей ситуации, правовое заключение, устные и письменные консультации.</p>
+                    <h3>Правовой аудит</h3>
+                    <p>Комплексная проверка юридической чистоты бизнеса</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция "Почему я" -->
+    <!-- Преимущества -->
     <section id="why-me">
         <div class="container">
-            <h2 class="text-center">Почему выбирают меня</h2>
-            <p class="text-center" style="max-width: 700px; margin: 0 auto;">Профессионализм, ответственность и результат — мои основные принципы в работе.</p>
+            <h2 class="text-center fade-in">Почему обращаются ко мне</h2>
             
             <div class="features-grid">
-                <div class="feature">
+                <div class="feature fade-in">
                     <div class="feature-icon">🎯</div>
-                    <h3>Опыт и экспертиза</h3>
-                    <p>Многолетняя успешная практика по сложным юридическим делам.</p>
+                    <h3>Опыт с 2004 года</h3>
+                    <p>Более 15 лет успешной практики в защите бизнеса</p>
                 </div>
                 
-                <div class="feature">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Индивидуальный подход</h3>
-                    <p>Каждое дело уникально, поэтому я нахожу персональное решение для каждого клиента.</p>
+                <div class="feature fade-in delay-1">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Личное ведение</h3>
+                    <p>Каждое дело веду лично, без передачи помощникам</p>
                 </div>
                 
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Конфиденциальность</h3>
-                    <p>Полная защита информации, предоставленной мне клиентом.</p>
+                <div class="feature fade-in delay-2">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Международный опыт</h3>
+                    <p>Работа в международных юридических компаниях</p>
                 </div>
                 
-                <div class="feature">
+                <div class="feature fade-in delay-3">
                     <div class="feature-icon">💼</div>
-                    <h3>Результативность</h3>
-                    <p>Нацеленность на достижение максимально положительного результата.</p>
+                    <h3>Ориентация на результат</h3>
+                    <p>Нацеленность на достижение целей клиента</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Секция "Контакты" -->
+    <!-- Контакты -->
     <section id="contacts" class="contact-section">
         <div class="container">
-            <h2>Консультация адвоката</h2>
-            <p>Готов защищать ваши права и интересы. Свяжитесь со мной для консультации и обсуждения вашего вопроса.</p>
-            <a href="tel:+79999999999" class="btn">Позвонить сейчас</a>
+            <h2 class="fade-in">Готов защитить ваш бизнес</h2>
+            <p class="fade-in delay-1">Свяжитесь для консультации по вашей ситуации</p>
+            <a href="tel:+79999999999" class="btn fade-in delay-2">Позвонить для консультации</a>
             
             <div class="contact-info">
-                <div class="contact-item">
+                <div class="contact-item fade-in">
                     <div class="contact-icon">📞</div>
                     <div>
                         <h4>Телефон</h4>
@@ -555,19 +496,11 @@
                     </div>
                 </div>
                 
-                <div class="contact-item">
+                <div class="contact-item fade-in delay-1">
                     <div class="contact-icon">✉️</div>
                     <div>
                         <h4>Email</h4>
                         <p><a href="mailto:info@lawyerafael.ru" style="color: white;">info@lawyerafael.ru</a></p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <h4>Адрес</h4>
-                        <p>г. Москва, ул. Юридическая, д. 15</p>
                     </div>
                 </div>
             </div>
@@ -579,43 +512,30 @@
         <div class="container">
             <div class="footer-content">
                 <a href="#" class="footer-logo">Адвокат Рафаэль Костанян</a>
-                <ul class="footer-links">
-                    <li><a href="#about">Обо мне</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#why-me">Почему я</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-                <p class="copyright">&copy; 2023 Адвокатский кабинет Рафаэля Костаняна. Все права защищены.</p>
+                <p class="copyright">&copy; 2024 Адвокатский кабинет Рафаэля Костаняна. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Мобильное меню
-        const navSlide = () => {
-            const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav-links li');
-            
-            burger.addEventListener('click', () => {
-                // Переключение навигации
-                nav.classList.toggle('nav-active');
-                
-                // Анимация ссылок
-                navLinks.forEach((link, index) => {
-                    if (link.style.animation) {
-                        link.style.animation = '';
-                    } else {
-                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                    }
-                });
-                
-                // Анимация бургера
-                burger.classList.toggle('toggle');
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }
-        
-        navSlide();
+        }, observerOptions);
+
+        // Наблюдаем за всеми элементами с классом fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
         // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -631,11 +551,6 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Закрытие мобильного меню после клика
-                    if(document.querySelector('.nav-links').classList.contains('nav-active')) {
-                        document.querySelector('.burger').click();
-                    }
                 }
             });
         });
