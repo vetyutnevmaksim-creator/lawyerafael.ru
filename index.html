@@ -39,7 +39,7 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 35px;
+            padding: 16px 40px;
             background-color: #8B4513;
             color: #fff;
             text-decoration: none;
@@ -50,16 +50,17 @@
             transition: all 0.3s ease;
             text-align: center;
             font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
         }
 
         .btn:hover {
             background-color: #6b3410;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 16px rgba(139, 69, 19, 0.4);
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .text-center {
@@ -81,10 +82,11 @@
         .delay-1 { transition-delay: 0.2s; }
         .delay-2 { transition-delay: 0.4s; }
         .delay-3 { transition-delay: 0.6s; }
+        .delay-4 { transition-delay: 0.8s; }
 
         /* Шапка */
         header {
-            background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             color: white;
             min-height: 100vh;
             display: flex;
@@ -95,7 +97,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 25px 0;
         }
 
         .logo {
@@ -112,7 +114,7 @@
         }
 
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
         }
 
         .nav-links a {
@@ -120,6 +122,7 @@
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover {
@@ -127,43 +130,75 @@
         }
 
         .hero {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 800px;
-    margin: 200px auto 0; /* Отступ сверху 200px */
-    min-height: 70vh;
-}
-
-        .hero h1 {
-            font-size: 3.2rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 0 80px;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 700px;
+            line-height: 1.4;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin: 3rem 0 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 5px;
         }
 
         /* Обо мне */
+        .about {
+            background: #fff;
+        }
+
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
 
         .about-img {
             flex: 1;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .about-img img {
@@ -182,131 +217,182 @@
         }
 
         .about-text h2 {
-            font-size: 2.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a2a3a;
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             color: #555;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            line-height: 1.7;
         }
 
         .experience-list {
             list-style: none;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
         }
 
         .experience-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+            padding-left: 2rem;
             position: relative;
+            font-size: 1.1rem;
         }
 
         .experience-list li:before {
-            content: "•";
+            content: "▸";
             color: #8B4513;
             font-weight: bold;
             position: absolute;
             left: 0;
+            font-size: 1.3rem;
         }
 
         /* Услуги */
         .services {
-            background-color: #fff;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #1a2a3a;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .service-card {
             background: #fff;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             text-align: center;
+            border: 1px solid #f0f0f0;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #8B4513;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: #1a2a3a;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Преимущества */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
 
         .feature {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
         }
 
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #8B4513;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .feature h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: #1a2a3a;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Контакты */
         .contact-section {
-            background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(26, 42, 58, 0.95), rgba(26, 42, 58, 0.95)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
 
         .contact-section h2 {
             color: white;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .contact-section p {
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
             opacity: 0.9;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            line-height: 1.6;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 50px;
+            margin-top: 50px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            color: #d4af37;
+        }
+
+        .contact-details h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
             color: #d4af37;
         }
 
@@ -314,32 +400,45 @@
         footer {
             background-color: #1a2a3a;
             color: #aaa;
-            padding: 40px 0 20px;
+            padding: 50px 0 30px;
             text-align: center;
         }
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .copyright {
-            margin-top: 20px;
-            font-size: 0.9rem;
+            margin-top: 30px;
+            font-size: 1rem;
             color: #777;
         }
 
         /* Адаптивность */
         @media screen and (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.3rem;
+            .hero {
+                padding: 80px 0 60px;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 30px;
+                margin: 2rem 0 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
             }
 
             .about-content {
@@ -352,7 +451,37 @@
 
             .contact-info {
                 flex-direction: column;
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
                 gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 0;
             }
         }
     </style>
@@ -366,36 +495,38 @@
                 <ul class="nav-links">
                     <li><a href="#about">Обо мне</a></li>
                     <li><a href="#services">Услуги</a></li>
+                    <li><a href="#why-me">Преимущества</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
 
             <div class="hero">
-    <h1 class="fade-in">Адвокат Рафаэль Костанян</h1>
-    <p class="fade-in delay-1">Защита бизнеса и корпоративные споры</p>
-    <p class="hero-subtitle fade-in delay-2">Профессиональное юридическое сопровождение с 2004 года</p>
-    
-    <div class="hero-stats fade-in delay-3">
-        <div class="stat">
-            <span class="stat-number">15+</span>
-            <span class="stat-text">лет опыта</span>
+                <h1 class="fade-in">Адвокат Рафаэль Костанян</h1>
+                <p class="hero-subtitle fade-in delay-1">Защита бизнеса и корпоративные споры</p>
+                <p class="hero-subtitle fade-in delay-2">Профессиональное юридическое сопровождение с 2004 года</p>
+                
+                <div class="hero-stats fade-in delay-3">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-text">лет успешной практики</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-text">международные компании в опыте</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-text">личное ведение дел</span>
+                    </div>
+                </div>
+                
+                <a href="#contacts" class="btn fade-in delay-4">Получить консультацию</a>
+            </div>
         </div>
-        <div class="stat">
-            <span class="stat-number">3</span>
-            <span class="stat-text">международные компании</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-text">личное ведение дел</span>
-        </div>
-    </div>
-    
-    <a href="#contacts" class="btn fade-in delay-4">Получить консультацию</a>
-</div>
     </header>
 
     <!-- Обо мне -->
-    <section id="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-img fade-in">
@@ -403,7 +534,7 @@
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Адвокат Рафаэль Костанян">
                 </div>
                 <div class="about-text">
-                    <h2 class="fade-in">Рафаэль Костанян</h2>
+                    <h2 class="fade-in">Профессиональный адвокат</h2>
                     <p class="fade-in delay-1">Практикую юриспруденцию с 2004 года. Лично сопровождаю и защищаю бизнес в судах, в налоговых и других вопросах более 15 лет.</p>
                     
                     <ul class="experience-list">
@@ -412,7 +543,7 @@
                         <li class="fade-in delay-3">Советник российской судебной фирмы "Муранов, Черняков и партнеры"</li>
                     </ul>
                     
-                    <p class="fade-in delay-3">Специализируюсь на комплексной защите бизнеса и корпоративных спорах.</p>
+                    <p class="fade-in delay-3">Специализируюсь на комплексной защите бизнеса и корпоративных спорах. Каждое дело веду лично, гарантируя максимальный результат.</p>
                 </div>
             </div>
         </div>
@@ -421,44 +552,46 @@
     <!-- Услуги -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="text-center fade-in">Мои услуги</h2>
-            <p class="text-center fade-in delay-1" style="max-width: 700px; margin: 0 auto;">Специализированная юридическая помощь для бизнеса</p>
+            <div class="section-header">
+                <h2 class="fade-in">Мои услуги</h2>
+                <p class="section-subtitle fade-in delay-1">Специализированная юридическая помощь для бизнеса любого масштаба</p>
+            </div>
             
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon">⚖️</div>
                     <h3>Корпоративные споры</h3>
-                    <p>Защита интересов в спорах между акционерами, участниками и руководством компаний</p>
+                    <p>Защита интересов в спорах между акционерами, участниками и руководством компаний. Разрешение корпоративных конфликтов.</p>
                 </div>
                 
                 <div class="service-card fade-in delay-1">
                     <div class="service-icon">📊</div>
                     <h3>Налоговые вопросы</h3>
-                    <p>Сопровождение налоговых проверок, защита в налоговых спорах</p>
+                    <p>Сопровождение налоговых проверок, защита в налоговых спорах, оптимизация налоговой нагрузки.</p>
                 </div>
                 
                 <div class="service-card fade-in delay-2">
                     <div class="service-icon">🏛️</div>
                     <h3>Арбитражные дела</h3>
-                    <p>Представление интересов в арбитражных судах по экономическим спорам</p>
+                    <p>Представление интересов в арбитражных судах по экономическим спорам и корпоративным конфликтам.</p>
                 </div>
 
                 <div class="service-card fade-in">
                     <div class="service-icon">📝</div>
                     <h3>Гражданские споры</h3>
-                    <p>Разрешение споров в сфере договорного права и обязательств</p>
+                    <p>Разрешение споров в сфере договорного права, обязательств и защиты деловой репутации.</p>
                 </div>
 
                 <div class="service-card fade-in delay-1">
                     <div class="service-icon">🏢</div>
                     <h3>Сопровождение бизнеса</h3>
-                    <p>Полное юридическое сопровождение деятельности компаний</p>
+                    <p>Полное юридическое сопровождение деятельности компаний, правовой аудит, разработка договоров.</p>
                 </div>
 
                 <div class="service-card fade-in delay-2">
                     <div class="service-icon">🔍</div>
                     <h3>Правовой аудит</h3>
-                    <p>Комплексная проверка юридической чистоты бизнеса</p>
+                    <p>Комплексная проверка юридической чистоты бизнеса, выявление рисков и их минимизация.</p>
                 </div>
             </div>
         </div>
@@ -467,31 +600,34 @@
     <!-- Преимущества -->
     <section id="why-me">
         <div class="container">
-            <h2 class="text-center fade-in">Почему обращаются ко мне</h2>
+            <div class="section-header">
+                <h2 class="fade-in">Почему обращаются ко мне</h2>
+                <p class="section-subtitle fade-in delay-1">Профессионализм, ответственность и результат — мои основные принципы в работе</p>
+            </div>
             
             <div class="features-grid">
                 <div class="feature fade-in">
                     <div class="feature-icon">🎯</div>
                     <h3>Опыт с 2004 года</h3>
-                    <p>Более 15 лет успешной практики в защите бизнеса</p>
+                    <p>Более 15 лет успешной практики в защите бизнеса и разрешении сложных юридических вопросов</p>
                 </div>
                 
                 <div class="feature fade-in delay-1">
                     <div class="feature-icon">⚡</div>
                     <h3>Личное ведение</h3>
-                    <p>Каждое дело веду лично, без передачи помощникам</p>
+                    <p>Каждое дело веду лично, без передачи помощникам. Полная вовлеченность в процесс</p>
                 </div>
                 
                 <div class="feature fade-in delay-2">
                     <div class="feature-icon">🛡️</div>
                     <h3>Международный опыт</h3>
-                    <p>Работа в международных юридических компаниях</p>
+                    <p>Работа в международных юридических компаниях позволяет использовать лучшие практики</p>
                 </div>
                 
                 <div class="feature fade-in delay-3">
                     <div class="feature-icon">💼</div>
                     <h3>Ориентация на результат</h3>
-                    <p>Нацеленность на достижение целей клиента</p>
+                    <p>Нацеленность на достижение целей клиента и максимально положительный исход дела</p>
                 </div>
             </div>
         </div>
@@ -501,23 +637,23 @@
     <section id="contacts" class="contact-section">
         <div class="container">
             <h2 class="fade-in">Готов защитить ваш бизнес</h2>
-            <p class="fade-in delay-1">Свяжитесь для консультации по вашей ситуации</p>
+            <p class="fade-in delay-1">Свяжитесь для конфиденциальной консультации по вашей ситуации. Обсудим возможные решения и стратегию защиты.</p>
             <a href="tel:+79999999999" class="btn fade-in delay-2">Позвонить для консультации</a>
             
             <div class="contact-info">
                 <div class="contact-item fade-in">
                     <div class="contact-icon">📞</div>
-                    <div>
+                    <div class="contact-details">
                         <h4>Телефон</h4>
-                        <p><a href="tel:+79262764310" style="color: white;">+7 (926) 276-43-10</a></p>
+                        <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
                     </div>
                 </div>
                 
                 <div class="contact-item fade-in delay-1">
                     <div class="contact-icon">✉️</div>
-                    <div>
+                    <div class="contact-details">
                         <h4>Email</h4>
-                        <p><a href="mailto:r.kostanyan@lawyerafael.ru" style="color: white;">info@lawyerafael.ru</a></p>
+                        <p><a href="mailto:info@lawyerafael.ru">info@lawyerafael.ru</a></p>
                     </div>
                 </div>
             </div>
