@@ -88,8 +88,7 @@
         /* Шапка с водяным знаком */
         header {
             background: 
-                linear-gradient(135deg, rgba(239, 246, 255, 0.92) 0%, rgba(254, 242, 242, 0.92) 100%),
-                url('logo.jpg') no-repeat center center/cover;
+                linear-gradient(135deg, rgba(239, 246, 255, 0.92) 0%, rgba(254, 242, 242, 0.92) 100%);
             color: #1e293b;
             min-height: 100vh;
             display: flex;
@@ -99,29 +98,8 @@
             overflow: hidden;
         }
 
-        /* Водяной знак на всей главной странице */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(220, 38, 38, 0.03) 0%, 
-                    rgba(37, 99, 235, 0.03) 50%, 
-                    rgba(220, 38, 38, 0.03) 100%),
-                url('logo.jpg') center center / 500px no-repeat;
-            opacity: 0.08;
-            z-index: 0;
-            pointer-events: none;
-            border-radius: 30px;
-            filter: grayscale(100%) brightness(1.1);
-        }
-
-        /* Дополнительные градиентные элементы */
+        /* Убрали водяной знак с логотипом */
+        /* Вместо него оставим только градиентные элементы */
         header::after {
             content: '';
             position: absolute;
@@ -138,7 +116,7 @@
             pointer-events: none;
         }
 
-        /* Чтобы весь контент был поверх водяного знака */
+        /* Чтобы весь контент был поверх фона */
         nav, .hero {
             position: relative;
             z-index: 10;
@@ -664,14 +642,6 @@
                 font-size: 1.2rem;
             }
 
-            /* Адаптация водяного знака для мобильных */
-            header::before {
-                width: 600px;
-                height: 600px;
-                background-size: 400px;
-                opacity: 0.06;
-            }
-
             .hero-stats {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -768,12 +738,6 @@
                 font-size: 2rem;
             }
 
-            header::before {
-                width: 400px;
-                height: 400px;
-                background-size: 250px;
-            }
-
             .stat-number {
                 font-size: 1.8rem;
             }
@@ -794,7 +758,7 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с водяным знаком -->
+    <!-- Шапка без водяного знака -->
     <header>
         <div class="container">
             <nav>
