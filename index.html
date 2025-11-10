@@ -195,22 +195,72 @@
             font-weight: 500;
         }
 
+        /* Стильный блок статистики с водяным знаком */
         .stats-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.92) 100%),
+                radial-gradient(circle at 30% 70%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(220, 38, 38, 0.03) 0%, transparent 50%);
             border-radius: 20px;
             padding: 40px 30px;
             margin: 3rem 0 4rem;
             border: 2px solid #e2e8f0;
-            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+            box-shadow: 
+                0 8px 32px rgba(37, 99, 235, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            width: 280px;
+            height: 280px;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(220, 38, 38, 0.04) 0%, 
+                    rgba(37, 99, 235, 0.04) 50%, 
+                    rgba(220, 38, 38, 0.04) 100%),
+                url('logo.jpg') center center / 180px no-repeat;
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 25px;
+            filter: grayscale(100%) brightness(1.1);
+        }
+
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.02) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.02) 0%, transparent 40%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .stats-title, .hero-stats, .stat {
+            position: relative;
+            z-index: 2;
         }
 
         .stats-title {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             color: #1e40af;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .hero-stats {
@@ -221,29 +271,47 @@
 
         .stat {
             text-align: center;
-            padding: 20px;
-            transition: transform 0.3s ease;
+            padding: 25px 20px;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 4px 12px rgba(37, 99, 235, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
 
         .stat:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 12px 28px rgba(37, 99, 235, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            border-color: rgba(37, 99, 235, 0.2);
         }
 
         .stat-number {
             display: block;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: bold;
             color: #dc2626;
             font-family: 'Playfair Display', serif;
             line-height: 1;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-text {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #475569;
-            line-height: 1.4;
-            font-weight: 500;
+            line-height: 1.5;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         /* Обо мне */
@@ -591,9 +659,24 @@
                 padding: 30px 20px;
                 margin: 2rem 0 3rem;
             }
-
+            
+            .stats-section::before {
+                width: 200px;
+                height: 200px;
+                background-size: 120px;
+                opacity: 0.08;
+            }
+            
+            .stat {
+                padding: 20px 15px;
+            }
+            
             .stat-number {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .stat-text {
+                font-size: 1rem;
             }
 
             .about-content {
@@ -745,6 +828,7 @@
         </div>
     </header>
 
+    <!-- Остальные секции остаются без изменений -->
     <!-- Обо мне -->
     <section id="about" class="about">
         <div class="container">
