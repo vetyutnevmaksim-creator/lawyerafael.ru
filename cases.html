@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши дела - Адвокат Рафаэль Костанян</title>
+    <!-- ПОДКЛЮЧАЕМ ШРИФТЫ КАК НА ГЛАВНОЙ СТРАНИЦЕ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
        
 /* Секция Наши дела */
 .cases-section {
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
     padding: 100px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lora', serif; /* ИЗМЕНЕНО: Lora вместо Roboto */
+    font-size: 1.1rem; /* ДОБАВЛЕНО: увеличен размер как на главной */
+    line-height: 1.7; /* ДОБАВЛЕНО: межстрочный интервал */
+    letter-spacing: 0.01em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .container {
@@ -26,20 +33,27 @@
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat вместо Playfair Display */
+    font-size: 3rem; /* УВЕЛИЧЕНО: было 2.8rem */
     margin-bottom: 1rem;
     color: #000000;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
+    font-weight: 700; /* ДОБАВЛЕНО: жирность */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: -0.02em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .section-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem; /* УВЕЛИЧЕНО: было 1.3rem */
     max-width: 700px;
     margin: 0 auto;
     color: #000000;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat */
+    font-weight: 500; /* ДОБАВЛЕНО: жирность */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: 0.03em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .cases-filters {
@@ -57,9 +71,11 @@
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 600; /* УВЕЛИЧЕНО: было 500 */
     color: #000000;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat вместо Roboto */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: 0.03em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .filter-btn:hover,
@@ -115,17 +131,23 @@
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600; /* УВЕЛИЧЕНО: было 500 */
     background: #eff6ff;
     color: #2563eb;
     border: 1px solid #dbeafe;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: 0.02em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .case-result {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600; /* УВЕЛИЧЕНО: было 500 */
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: 0.02em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .case-result.success {
@@ -135,11 +157,13 @@
 }
 
 .case-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem; /* УВЕЛИЧЕНО: было 1.3rem */
     margin-bottom: 20px;
     line-height: 1.4;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat вместо Playfair Display */
     color: #dc2626;
+    font-weight: 700; /* ДОБАВЛЕНО: жирность */
+    letter-spacing: -0.01em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .case-details {
@@ -149,11 +173,15 @@
 .case-details p {
     margin-bottom: 8px;
     color: #000000;
-    font-size: 0.95rem;
+    font-size: 1rem; /* УВЕЛИЧЕНО: было 0.95rem */
+    font-family: 'Lora', serif; /* ИЗМЕНЕНО: Lora */
+    font-weight: 500; /* ДОБАВЛЕНО: жирность */
+    line-height: 1.6;
 }
 
 .case-details strong {
     color: #000000;
+    font-weight: 600; /* УВЕЛИЧЕНО: жирность */
 }
 
 .case-result-details {
@@ -167,7 +195,8 @@
 .case-result-details p {
     margin: 0;
     color: #1e40af;
-    font-weight: 500;
+    font-weight: 600; /* УВЕЛИЧЕНО: было 500 */
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat */
 }
 
 .case-result-details strong {
@@ -188,6 +217,10 @@
     transition: all 0.3s ease;
     color: #2563eb;
     border: 1px solid #2563eb;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat */
+    font-weight: 600; /* ДОБАВЛЕНО: жирность */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: 0.02em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 .case-link:hover {
@@ -208,16 +241,20 @@
 }
 
 .stat-item .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.8rem; /* УВЕЛИЧЕНО: было 2.5rem */
+    font-weight: 800; /* УВЕЛИЧЕНО: было bold */
     color: #000000;
     margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat вместо Playfair Display */
 }
 
 .stat-item .stat-label {
     color: #000000;
     font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif; /* ИЗМЕНЕНО: Montserrat */
+    font-weight: 600; /* ДОБАВЛЕНО: жирность */
+    text-transform: uppercase; /* ДОБАВЛЕНО: заглавные буквы */
+    letter-spacing: 0.03em; /* ДОБАВЛЕНО: межбуквенный интервал */
 }
 
 /* Анимации */
@@ -265,7 +302,7 @@
     }
 
     .section-header h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem; /* УВЕЛИЧЕНО: было 2.2rem */
     }
 }
     </style>
@@ -668,10 +705,17 @@
             observer.observe(el);
         });
 
-        // Фильтрация дел
+        // Фильтрация дел - ИСПРАВЛЕННЫЙ КОД
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const caseCards = document.querySelectorAll('.case-card');
+            
+            // Показываем все карточки при загрузке
+            caseCards.forEach(card => {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
             
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
