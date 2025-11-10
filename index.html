@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвокат Рафаэль Костанян | Защита бизнеса и корпоративные споры</title>
+    <meta name="description" content="Адвокат Рафаэль Костанян. Сопровождение бизнеса, корпоративные споры, налоговые вопросы. Опыт с 2004 года. Конфиденциально.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a2a3a;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Анимации */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+        .delay-4 { transition-delay: 0.8s; }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(220, 38, 38, 0.9) 100%), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Бургер-меню */
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 0 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 3rem 0 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-title {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #fbbf24;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        /* Обо мне */
+        .about {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+            border: 3px solid #dc2626;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #dc2626;
+            background: linear-gradient(135deg, #dc2626, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-text p {
+            margin-bottom: 1.8rem;
+            color: #4b5563;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .experience-list {
+            list-style: none;
+            margin: 2.5rem 0;
+        }
+
+        .experience-list li {
+            margin-bottom: 1.2rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            color: #374151;
+        }
+
+        .experience-list li:before {
+            content: "▸";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+
+        /* Услуги */
+        .services {
+            background: linear-gradient(135deg, #eff6ff 0%, #fef2f2 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #dc2626, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #fff, #f8fafc);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #2563eb, #dc2626);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+            border-color: #2563eb;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #2563eb, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: #1e293b;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Конкретные дела */
+        .cases {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .cases-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #64748b;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #2563eb, #dc2626);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #2563eb, #dc2626);
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+            border-color: #2563eb;
+        }
+
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .case-category {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .case-result {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .case-result.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .case-result.warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .case-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #1e293b;
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .case-details {
+            margin-bottom: 20px;
+        }
+
+        .case-details p {
+            margin-bottom: 8px;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .case-details strong {
+            color: #374151;
+        }
+
+        .case-result-details {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #10b981;
+        }
+
+        .case-result-details p {
+            margin: 0;
+            color: #047857;
+            font-weight: 500;
+        }
+
+        .case-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .case-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border: 1px solid #2563eb;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .case-link:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .cases-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #dc2626, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-item .stat-label {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Преимущества */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+            border-color: #2563eb;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #2563eb, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: #1e293b;
+        }
+
+        .feature p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Контакты */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(220, 38, 38, 0.95) 100%), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section p {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.95;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #fbbf24;
+        }
+
+        .contact-details h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #fbbf24;
+        }
+
+        /* Подвал */
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #374151 100%);
+            color: #cbd5e1;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+
+        /* Анимация для мобильного меню */
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Адаптивность */
+        @media screen and (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-section {
+                padding: 30px 20px;
+                margin: 2rem 0 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            /* Мобильное меню */
+            .burger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                height: 100vh;
+                width: 70%;
+                background: linear-gradient(135deg, #2563eb, #dc2626);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 25px 0;
+                opacity: 0;
+            }
+            
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+            
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cases-filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .case-card {
+                padding: 20px;
+            }
+            
+            .cases-stats {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <!-- ЗАМЕНИТЕ НА ВАШЕ ЛОГО -->
+                    <img src="logo.jpg" alt="Логотип" class="logo-img">
+                    <a href="#" class="logo">Адвокат Рафаэль Костанян</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#cases">Конкретные дела</a></li>
+                    <li><a href="#why-me">Преимущества</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+
+            <div class="hero">
+                <h1 class="fade-in">Адвокат Рафаэль Костанян</h1>
+                <p class="hero-subtitle fade-in delay-1">Защита бизнеса и корпоративные споры</p>
+                <p class="hero-subtitle fade-in delay-2">Профессиональное юридическое сопровождение с 2004 года</p>
+                
+                <div class="stats-section fade-in delay-3">
+                    <div class="stats-title">АДВОКАТСКИЙ КАБИНЕТ РАФАЭЛЯ КОСТАНЯНА - ЭТО:</div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">18+</span>
+                            <span class="stat-text">лет успешной юридической практики</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">>95%</span>
+                            <span class="stat-text">результативность в судебных делах</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">>500 млн ₽</span>
+                            <span class="stat-text">отсудили для клиентов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-text">сопровождение вашего бизнеса</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#contacts" class="btn fade-in delay-4">Получить консультацию</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Обо мне -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img fade-in">
+                    <!-- ЗАМЕНИТЕ НА РЕАЛЬНОЕ ФОТО -->
+                    <img src="logo.jpg" alt="Адвокат Рафаэль Костанян">
+                </div>
+                <div class="about-text">
+                    <h2 class="fade-in">Обо мне</h2>
+                    <p class="fade-in delay-1">Практикую юриспруденцию с 2004 года. Лично сопровождаю и защищаю бизнес в судах, в налоговых и других вопросах более 15 лет.</p>
+                    
+                    <ul class="experience-list">
+                        <li class="fade-in delay-1">Ex-партнер международной юридической фирмы Integrities</li>
+                        <li class="fade-in delay-2">Консультант Ernst & Young</li>
+                        <li class="fade-in delay-3">Советник российской судебной фирмы "Муранов, Черняков и партнеры"</li>
+                    </ul>
+                    
+                    <p class="fade-in delay-3">Специализируюсь на комплексной защите бизнеса и корпоративных спорах. Каждое дело веду лично, гарантируя максимальный результат.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fade-in">Мои услуги</h2>
+                <p class="section-subtitle fade-in delay-1">Специализированная юридическая помощь для бизнеса любого масштаба</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Корпоративные споры</h3>
+                    <p>Защита интересов в спорах между акционерами, участниками и руководством компаний. Разрешение корпоративных конфликтов.</p>
+                </div>
+                
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">📊</div>
+                    <h3>Налоговые вопросы</h3>
+                    <p>Сопровождение налоговых проверок, защита в налоговых спорах, оптимизация налоговой нагрузки.</p>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Арбитражные дела</h3>
+                    <p>Представление интересов в арбитражных судах по экономическим спорам и корпоративным конфликтам.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📝</div>
+                    <h3>Гражданские споры</h3>
+                    <p>Разрешение споров в сфере договорного права, обязательств и защиты деловой репутации.</p>
+                </div>
+
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">🏢</div>
+                    <h3>Сопровождение бизнеса</h3>
+                    <p>Полное юридическое сопровождение деятельности компаний, правовой аудит, разработка договоров.</p>
+                </div>
+
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">🔍</div>
+                    <h3>Правовой аудит</h3>
+                    <p>Комплексная проверка юридической чистоты бизнеса, выявление рисков и их минимизация.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Конкретные дела -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fade-in">Конкретные дела</h2>
+                <p class="section-subtitle fade-in delay-1">Реальные кейсы и достижения в судебной практике</p>
+            </div>
+
+            <!-- Фильтры по категориям -->
+            <div class="cases-filters fade-in">
+                <button class="filter-btn active" data-filter="all">Все дела</button>
+                <button class="filter-btn" data-filter="government">ГОЗ споры</button>
+                <button class="filter-btn" data-filter="corporate">Корпоративные споры</button>
+                <button class="filter-btn" data-filter="economic">Экономические споры</button>
+                <button class="filter-btn" data-filter="tax">Налоговые споры</button>
+                <button class="filter-btn" data-filter="bankruptcy">Банкротства</button>
+                <button class="filter-btn" data-filter="civil">Гражданские споры</button>
+            </div>
+
+            <div class="cases-grid">
+                <!-- ГОЗ споры -->
+                <div class="case-card fade-in" data-category="government">
+                    <div class="case-header">
+                        <span class="case-category">ГОЗ споры</span>
+                        <span class="case-result success">Выиграно</span>
+                    </div>
+                    <h3>Защита ответчика против АО «Концерн ВКО «Алмаз-Антей»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-82966/2021</p>
+                        <p><strong>Клиент:</strong> АО «Информтехника и Связь»</p>
+                        <p><strong>Сумма спора:</strong> 212 млн руб. + встречный иск 45 млн руб.</p>
+                        <p><strong>Суть:</strong> Защита в споре о неотработанном авансе по ГОЗ</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Отказ в первоначальном иске, встречный иск удовлетворен полностью</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/d8e74760-65a9-49f0-8455-c37db5864930" target="_blank" class="case-link">Карточка дела</a>
+                        <a href="https://regnum.ru/news/3594899" target="_blank" class="case-link">СМИ о деле</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in delay-1" data-category="government">
+                    <div class="case-header">
+                        <span class="case-category">ГОЗ споры</span>
+                        <span class="case-result success">Защищено</span>
+                    </div>
+                    <h3>Оспаривание взыскания астрента с АО «Концерн ВКО «Алмаз-Антей»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-129473/19</p>
+                        <p><strong>Клиент:</strong> АО «НТЦ ВТ и СА»</p>
+                        <p><strong>Сумма спора:</strong> 10 млн руб.</p>
+                        <p><strong>Суть:</strong> Оспаривание взыскания астрента за неисполнение судебного решения</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Взыскание астрента признано законным</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/50b626fb-3185-43a2-8285-1d921b8ca2cc" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in" data-category="government">
+                    <div class="case-header">
+                        <span class="case-category">ГОЗ споры</span>
+                        <span class="case-result success">Мировое соглашение</span>
+                    </div>
+                    <h3>Расторжение договора ГОЗ и признание затрат с АО «Концерн ВКО «Алмаз-Антей»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-82966/2021</p>
+                        <p><strong>Клиент:</strong> АО «НТЦ ВТ и СА»</p>
+                        <p><strong>Сумма спора:</strong> 157 млн руб.</p>
+                        <p><strong>Суть:</strong> Расторжение договора ОКР и признание фактических затрат</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Мировое соглашение, признание затрат 148 млн руб.</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/a4ae7496-31c9-4069-a862-a373a89bf09f" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in delay-1" data-category="government">
+                    <div class="case-header">
+                        <span class="case-category">ГОЗ споры</span>
+                        <span class="case-result success">Отказ в иске</span>
+                    </div>
+                    <h3>Защита от взыскания пеней по ГОЗ с госзаказчиком</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-186587/2022</p>
+                        <p><strong>Клиент:</strong> АО «Информтехника и Связь»</p>
+                        <p><strong>Сумма спора:</strong> 246 млн руб.</p>
+                        <p><strong>Суть:</strong> Защита от взыскания пеней по договору ОКР в рамках ГОЗ</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Полный отказ в удовлетворении иска</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/11d8dc61-5289-4db1-a0b1-d33f150cc202" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in" data-category="government">
+                    <div class="case-header">
+                        <span class="case-category">ГОЗ споры</span>
+                        <span class="case-result success">Отказ в иске</span>
+                    </div>
+                    <h3>Защита от взыскания пеней по договору ГОЗ</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-218061/2023</p>
+                        <p><strong>Клиент:</strong> АО «Информтехника и Связь»</p>
+                        <p><strong>Сумма спора:</strong> 52 млн руб.</p>
+                        <p><strong>Суть:</strong> Защита от взыскания пеней по договору ОКР в рамках ГОЗ</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Полный отказ в удовлетворении иска</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/50d0bfb8-eb95-43de-b731-e3e131f0e708" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in delay-1" data-category="government">
+                    <div class="case-header">
+                        <span class="case-category">ГОЗ споры</span>
+                        <span class="case-result success">Отказ в иске</span>
+                    </div>
+                    <h3>Защита в споре по договору подряда в рамках ГОЗ</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А41-19874/2024</p>
+                        <p><strong>Клиент:</strong> Заказчик</p>
+                        <p><strong>Суть:</strong> Признание недействительным одностороннего отказа от договора подряда</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Полный отказ в удовлетворении иска</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/a7a50f08-1457-4c70-abb6-f887c0922ea5" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <!-- Корпоративные споры -->
+                <div class="case-card fade-in" data-category="corporate">
+                    <div class="case-header">
+                        <span class="case-category">Корпоративные споры</span>
+                        <span class="case-result success">Успешно</span>
+                    </div>
+                    <h3>Взыскание убытков с руководства АО «Воронежский опытный завод программной продукции»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А14-16196/2024</p>
+                        <p><strong>Клиент:</strong> Группа миноритарных акционеров</p>
+                        <p><strong>Сумма спора:</strong> 152 млн руб.</p>
+                        <p><strong>Суть:</strong> Взыскание убытков от необоснованных премий и выплат руководству</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Действия руководства признаны недобросовестными и неразумными</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/d9bb2d04-514a-440c-a706-00fac2f4a0ba" target="_blank" class="case-link">Карточка дела</a>
+                        <a href="https://www.kommersant.ru/doc/7063881" target="_blank" class="case-link">Коммерсантъ</a>
+                    </div>
+                </div>
+
+                <!-- Экономические споры -->
+                <div class="case-card fade-in delay-1" data-category="economic">
+                    <div class="case-header">
+                        <span class="case-category">Экономические споры</span>
+                        <span class="case-result success">Снижено</span>
+                    </div>
+                    <h3>Защита в строительном споре с АО «МСУ-1»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-151823/2021</p>
+                        <p><strong>Клиент:</strong> ООО «Инвестстрой Групп»</p>
+                        <p><strong>Сумма спора:</strong> 24 млн руб. + пени 19 млн руб.</p>
+                        <p><strong>Суть:</strong> Взыскание задолженности по договору строительного подряда</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Снижение задолженности до 6,5 млн руб. и пеней до 1,8 млн руб.</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/783d7ecb-db45-44b3-840c-11b7f4ca0532" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in" data-category="economic">
+                    <div class="case-header">
+                        <span class="case-category">Экономические споры</span>
+                        <span class="case-result success">Добровольно погашено</span>
+                    </div>
+                    <h3>Страховой спор с АО «ЭКСАР»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-48665/2023</p>
+                        <p><strong>Клиент:</strong> Экспортер</p>
+                        <p><strong>Сумма спора:</strong> 290 млн руб.</p>
+                        <p><strong>Суть:</strong> Взыскание страхового возмещения по экспортному договору</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Отказ от иска в связи с добровольным погашением задолженности</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/86511cbe-f4d1-4174-a230-413561ead052" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <!-- Налоговые споры -->
+                <div class="case-card fade-in delay-1" data-category="tax">
+                    <div class="case-header">
+                        <span class="case-category">Налоговые споры</span>
+                        <span class="case-result success">Снижено</span>
+                    </div>
+                    <h3>Защита при налоговой проверке производителя упаковки</h3>
+                    <div class="case-details">
+                        <p><strong>Ситуация:</strong> Выездная налоговая проверка</p>
+                        <p><strong>Клиент:</strong> Производитель пластмассовых изделий</p>
+                        <p><strong>Исходные доначисления:</strong> 120 млн руб. (недоимка 70 млн руб.)</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Снижение недоимки до 4 млн руб. на досудебной стадии</p>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in" data-category="tax">
+                    <div class="case-header">
+                        <span class="case-category">Налоговые споры</span>
+                        <span class="case-result success">Снижено</span>
+                    </div>
+                    <h3>Защита поставщика рыбы при налоговой проверке</h3>
+                    <div class="case-details">
+                        <p><strong>Ситуация:</strong> Выездная налоговая проверка</p>
+                        <p><strong>Клиент:</strong> Поставщик рыбы и морепродуктов</p>
+                        <p><strong>Исходные доначисления:</strong> 400 млн руб. (недоимка 262 млн руб.)</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Снижение недоимки до 70 млн руб., исключение недоимки по налогу на прибыль</p>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in delay-1" data-category="tax">
+                    <div class="case-header">
+                        <span class="case-category">Налоговые споры</span>
+                        <span class="case-result success">Прекращено</span>
+                    </div>
+                    <h3>Уголовное дело по неуплате налогов в особо крупном размере</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № 01-0074/2023</p>
+                        <p><strong>Статья:</strong> п. «б» ч. 2 ст. 199 УК РФ</p>
+                        <p><strong>Доначисления:</strong> 205 млн руб.</p>
+                        <p><strong>Суть:</strong> Защита в уголовном деле о налоговых преступлениях</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Дело прекращено судом по ходатайству защиты</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://mos-gorsud.ru/rs/dorogomilovskij/services/cases/criminal/details/39667d50-8b2d-11ec-9beb-fb5ec51e8043" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <!-- Банкротства -->
+                <div class="case-card fade-in" data-category="bankruptcy">
+                    <div class="case-header">
+                        <span class="case-category">Банкротства</span>
+                        <span class="case-result success">Отменено</span>
+                    </div>
+                    <h3>Оспаривание гонорара управляющего в деле о банкротстве АО «Открытие Холдинг»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-32328/2020</p>
+                        <p><strong>Клиент:</strong> Кредиторы банка</p>
+                        <p><strong>Сумма:</strong> Гонорар 21 млн руб. (3 млн/мес)</p>
+                        <p><strong>Суть:</strong> Крупнейшее банкротное дело России</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Решение о гонораре отменено апелляцией</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/818fd3c8-863d-4908-86f9-b660f09dd6be" target="_blank" class="case-link">Карточка дела</a>
+                        <a href="https://mfd.ru/news/view/?id=2509275" target="_blank" class="case-link">Новости</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in delay-1" data-category="bankruptcy">
+                    <div class="case-header">
+                        <span class="case-category">Банкротства</span>
+                        <span class="case-result success">Снижено</span>
+                    </div>
+                    <h3>Оспаривание убытков в деле о банкротстве ООО «Инвестстрой XXI -- век»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А41-81623/18</p>
+                        <p><strong>Клиент:</strong> Генеральный директор</p>
+                        <p><strong>Сумма спора:</strong> 104 млн руб.</p>
+                        <p><strong>Суть:</strong> Обжалование взыскания убытков с генерального директора</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Снижение убытков на 60 млн руб.</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/4f89caf5-f721-46a5-9c4c-33c62f40eba1" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in" data-category="bankruptcy">
+                    <div class="case-header">
+                        <span class="case-category">Банкротства</span>
+                        <span class="case-result success">Отказ в иске</span>
+                    </div>
+                    <h3>Защита контрагента в деле о банкротстве ООО «Альтоника»</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № А40-49835/22-59-160 Б</p>
+                        <p><strong>Клиент:</strong> ООО «ИТСофт»</p>
+                        <p><strong>Сумма спора:</strong> 170 млн руб.</p>
+                        <p><strong>Суть:</strong> Признание недействительными сделок с должником</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Отказ в удовлетворении заявлений конкурсного управляющего</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://kad.arbitr.ru/Card/422980d4-7489-41dd-b735-59181d447368" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <!-- Гражданские споры -->
+                <div class="case-card fade-in delay-1" data-category="civil">
+                    <div class="case-header">
+                        <span class="case-category">Гражданские споры</span>
+                        <span class="case-result success">Оставлен без рассмотрения</span>
+                    </div>
+                    <h3>Защита от иска Генеральной прокуратуры об обращении имущества в доход РФ</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № 02-4394/2022</p>
+                        <p><strong>Клиент:</strong> Ответчик</p>
+                        <p><strong>Суть:</strong> Иск Генпрокуратуры об обращении имущества в доход государства</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Иск оставлен без рассмотрения за неявкой истца</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://mos-gorsud.ru/rs/ostankinskij/services/cases/civil/details/9ec21cc1-f236-11ec-84c4-7dee7a3aadb1" target="_blank" class="case-link">Карточка дела</a>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in" data-category="civil">
+                    <div class="case-header">
+                        <span class="case-category">Гражданские споры</span>
+                        <span class="case-result success">Отказ от иска</span>
+                    </div>
+                    <h3>Защита активистов «Ивановской горки» от иска застройщика</h3>
+                    <div class="case-details">
+                        <p><strong>Дело:</strong> № 02-0851/2022</p>
+                        <p><strong>Клиент:</strong> Активисты</p>
+                        <p><strong>Сумма иска:</strong> 61 млн руб.</p>
+                        <p><strong>Суть:</strong> Взыскание убытков за защиту прав граждан</p>
+                    </div>
+                    <div class="case-result-details">
+                        <p><strong>Результат:</strong> Полный отказ истца от требований</p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://rapsinews.ru/judicial_news/20220415/307891658.html" target="_blank" class="case-link">РАПСИ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cases-stats fade-in delay-2">
+                <div class="stat-item">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">успешных дел</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">>2.5 млрд ₽</div>
+                    <div class="stat-label">защищенные активы</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">позитивных решений</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="why-me">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fade-in">Почему обращаются ко мне</h2>
+                <p class="section-subtitle fade-in delay-1">Профессионализм, ответственность и результат — мои основные принципы в работе</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Опыт с 2004 года</h3>
+                    <p>Более 15 лет успешной практики в защите бизнеса и разрешении сложных юридических вопросов</p>
+                </div>
+                
+                <div class="feature fade-in delay-1">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Личное ведение</h3>
+                    <p>Каждое дело веду лично, без передачи помощникам. Полная вовлеченность в процесс</p>
+                </div>
+                
+                <div class="feature fade-in delay-2">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Международный опыт</h3>
+                    <p>Работа в международных юридических компаниях позволяет использовать лучшие практики</p>
+                </div>
+                
+                <div class="feature fade-in delay-3">
+                    <div class="feature-icon">💼</div>
+                    <h3>Ориентация на результат</h3>
+                    <p>Нацеленность на достижение целей клиента и максимально положительный исход дела</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="contact-section">
+        <div class="container">
+            <h2 class="fade-in">Готов защитить ваш бизнес</h2>
+            <p class="fade-in delay-1">Свяжитесь для конфиденциальной консультации по вашей ситуации. Обсудим возможные решения и стратегию защиты.</p>
+            <a href="tel:+7-926-276-43-10" class="btn fade-in delay-2">Позвонить для консультации</a>
+            
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>Телефон</h4>
+                        <p><a href="tel:+7-926-276-43-10">+7 (926) 276-43-10</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item fade-in delay-1">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p><a href="mailto:r.kostanyan@lawyerafael.ru">r.kostanyan@lawyerafael.ru</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <!-- ЗАМЕНИТЕ НА ВАШЕ ЛОГО -->
+                    <img src="logo.jpg" alt="Логотип" class="footer-logo-img">
+                    <a href="#" class="footer-logo">Адвокат Рафаэль Костанян</a>
+                </div>
+                <p class="copyright">&copy; 2024 Адвокатский кабинет Рафаэля Костаняна. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за всеми элементами с классом fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Бургер-меню
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            // Переключение навигации
+            nav.classList.toggle('active');
+            
+            // Анимация ссылок
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            
+            // Анимация бургера
+            burger.classList.toggle('toggle');
+        });
+
+        // Закрытие меню при клике на ссылку
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(link => {
+                    link.style.animation = '';
+                });
+            });
+        });
+
+        // Фильтрация дел
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const caseCards = document.querySelectorAll('.case-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Убираем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    caseCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
