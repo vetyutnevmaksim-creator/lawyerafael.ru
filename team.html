@@ -26,7 +26,7 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px;
         }
@@ -115,16 +115,16 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 60px;
             margin-top: 60px;
         }
 
         .team-member {
             background: #fff;
-            border-radius: 20px;
-            padding: 50px 35px;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            border-radius: 25px;
+            padding: 60px 45px;
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
             transition: all 0.4s ease;
             border: 3px solid transparent;
             text-align: center;
@@ -132,67 +132,71 @@
             display: flex;
             flex-direction: column;
             height: auto;
+            min-height: 850px;
         }
 
         .team-member.featured {
             border-color: #dc2626;
             transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.15);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.2);
         }
 
         .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
             border-color: #2563eb;
         }
 
         .team-member.featured:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-15px) scale(1.02);
             border-color: #dc2626;
         }
 
         .member-header {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .member-status {
             position: absolute;
-            top: -60px;
+            top: -70px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #dc2626, #b91c1c);
             color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
             text-transform: uppercase;
             z-index: 10;
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 6px 15px rgba(220, 38, 38, 0.4);
             white-space: nowrap;
+            letter-spacing: 1px;
         }
 
         .team-member.featured .member-status {
             background: linear-gradient(135deg, #dc2626, #b91c1c);
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+            box-shadow: 0 6px 15px rgba(220, 38, 38, 0.5);
+            font-size: 1.3rem;
+            padding: 14px 28px;
         }
 
         .member-photo {
             position: relative;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             display: flex;
             justify-content: center;
         }
 
         .member-photo img {
-            width: 240px;
-            height: 300px;
-            border-radius: 12px;
+            width: 300px;
+            height: 380px;
+            border-radius: 15px;
             object-fit: cover;
-            border: 4px solid #e2e8f0;
+            border: 5px solid #e2e8f0;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .team-member.featured .member-photo img {
@@ -202,29 +206,30 @@
         .team-member:hover .member-photo img {
             border-color: #2563eb;
             transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .member-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.9rem;
+            font-size: 2.3rem;
             color: #1e40af;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .member-position {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #dc2626;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .member-description {
             color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            line-height: 1.7;
+            margin-bottom: 35px;
             text-align: left;
             flex-grow: 1;
+            font-size: 1.1rem;
         }
 
         .member-description ul {
@@ -234,26 +239,27 @@
 
         .member-description li {
             position: relative;
-            padding-left: 24px;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.05rem;
         }
 
         .member-description li:before {
             content: "•";
             color: #dc2626;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             position: absolute;
-            left: 8px;
+            left: 10px;
             top: -2px;
         }
 
         .member-experience {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 25px;
+            gap: 40px;
+            margin-bottom: 35px;
         }
 
         .exp-item {
@@ -262,7 +268,7 @@
 
         .exp-number {
             display: block;
-            font-size: 1.9rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: #dc2626;
             font-family: 'Playfair Display', serif;
@@ -270,7 +276,7 @@
         }
 
         .exp-text {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: #64748b;
             font-weight: 500;
         }
@@ -278,16 +284,16 @@
         .member-specialization {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             justify-content: center;
         }
 
         .specialization-tag {
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             color: #1e40af;
-            padding: 8px 14px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 1rem;
             font-weight: 500;
             border: 1px solid #dbeafe;
         }
@@ -351,6 +357,18 @@
         }
 
         /* Адаптивность */
+        @media (max-width: 1100px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .team-member {
+                min-height: auto;
+                padding: 50px 35px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -393,13 +411,12 @@
             }
 
             .team-grid {
-                grid-template-columns: 1fr;
                 gap: 40px;
                 margin-top: 40px;
             }
 
             .team-member {
-                padding: 40px 25px;
+                padding: 45px 30px;
                 margin: 0 10px;
             }
 
@@ -408,38 +425,65 @@
             }
 
             .team-member.featured:hover {
-                transform: translateY(-10px);
+                transform: translateY(-15px);
             }
 
             .member-photo img {
-                width: 200px;
-                height: 250px;
+                width: 250px;
+                height: 320px;
             }
 
             .member-info h3 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
             .member-position {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .member-description {
-                font-size: 0.95rem;
+                font-size: 1.05rem;
+            }
+
+            .member-description li {
+                font-size: 1rem;
             }
 
             .member-experience {
-                gap: 20px;
+                gap: 30px;
             }
 
             .exp-number {
-                font-size: 1.6rem;
+                font-size: 2rem;
+            }
+
+            .exp-text {
+                font-size: 1rem;
             }
 
             .member-status {
-                font-size: 0.9rem;
-                padding: 8px 16px;
-                top: -50px;
+                font-size: 1.1rem;
+                padding: 10px 20px;
+                top: -60px;
+            }
+            
+            .team-member.featured .member-status {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-member {
+                padding: 40px 25px;
+            }
+            
+            .member-photo img {
+                width: 220px;
+                height: 280px;
             }
         }
 
@@ -461,22 +505,26 @@
             }
 
             .member-photo img {
-                width: 170px;
-                height: 220px;
+                width: 200px;
+                height: 260px;
             }
 
             .member-info h3 {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
+            }
+
+            .member-position {
+                font-size: 1.2rem;
             }
 
             .member-experience {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
 
             .specialization-tag {
-                font-size: 0.75rem;
-                padding: 6px 10px;
+                font-size: 0.9rem;
+                padding: 8px 14px;
             }
 
             .footer-logo {
@@ -484,9 +532,21 @@
             }
 
             .member-status {
-                font-size: 0.85rem;
-                padding: 7px 14px;
-                top: -45px;
+                font-size: 1rem;
+                padding: 8px 16px;
+                top: -50px;
+            }
+            
+            .team-member.featured .member-status {
+                font-size: 1.1rem;
+            }
+            
+            .member-description {
+                font-size: 1rem;
+            }
+            
+            .member-description li {
+                font-size: 0.95rem;
             }
         }
 
@@ -497,22 +557,22 @@
             }
 
             .member-photo img {
-                width: 150px;
-                height: 190px;
+                width: 180px;
+                height: 230px;
             }
 
             .member-info h3 {
-                font-size: 1.3rem;
+                font-size: 1.6rem;
             }
 
             .member-description {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
             }
 
             .member-status {
-                font-size: 0.8rem;
-                padding: 6px 12px;
-                top: -40px;
+                font-size: 0.9rem;
+                padding: 7px 14px;
+                top: -45px;
             }
         }
     </style>
@@ -559,7 +619,7 @@
                     </div>
                     <div class="member-info">
                         <h3>Рафаэль Костанян</h3>
-                        <p class="member-position">Основатель практики</p>
+                        <p class="member-position">Адвокат</p>
                         <div class="member-description">
                             <ul>
                                 <li>Основатель адвокатского кабинета</li>
@@ -591,7 +651,7 @@
                     </div>
                     <div class="member-info">
                         <h3>Леонид Бекренев</h3>
-                        <p class="member-position">.Юрист</p>
+                        <p class="member-position">Юрист</p>
                         <div class="member-description">
                             <ul>
                                 <li>Специалист по арбитражным спорам</li>
