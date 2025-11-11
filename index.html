@@ -193,19 +193,37 @@
             transform: translateY(-2px);
         }
 
-        /* Бургер-меню */
+        /* Бургер-меню - ИСПРАВЛЕННЫЙ КОД */
         .burger {
             display: none;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1002; /* Увеличил z-index */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            position: relative;
         }
 
         .burger div {
-            width: 25px;
+            width: 100%;
             height: 3px;
             background-color: #1e40af;
-            margin: 5px;
             transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Состояние активного бургера */
+        .burger.active .line1 {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger.active .line2 {
+            opacity: 0;
+        }
+
+        .burger.active .line3 {
+            transform: rotate(-45deg) translate(7px, -6px);
         }
 
         .hero {
@@ -680,7 +698,7 @@
             }
         }
 
-        /* Адаптивность */
+        /* Адаптивность - ИСПРАВЛЕННЫЙ КОД */
         @media screen and (max-width: 768px) {
             .hero {
                 padding: 80px 0 60px;
@@ -720,9 +738,9 @@
                 flex-direction: column;
             }
 
-            /* Мобильное меню */
+            /* Мобильное меню - ИСПРАВЛЕННЫЙ КОД */
             .burger {
-                display: block;
+                display: flex; /* Изменил на flex */
             }
             
             .nav-links {
@@ -731,12 +749,15 @@
                 top: 0;
                 height: 100vh;
                 width: 80%;
+                max-width: 300px;
                 background: linear-gradient(135deg, #1e40af, #dc2626);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 transition: right 0.5s ease;
-                z-index: 999;
+                z-index: 1001; /* Увеличил z-index */
+                padding: 80px 20px 40px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             }
             
             .nav-links.active {
@@ -744,27 +765,27 @@
             }
             
             .nav-links li {
-                margin: 25px 0;
+                margin: 20px 0;
                 opacity: 0;
+                width: 100%;
+                text-align: center;
             }
 
             .nav-links a {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 white-space: normal;
                 text-align: center;
                 color: white;
+                display: block;
+                padding: 15px 20px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                width: 100%;
             }
             
-            .burger.toggle .line1 {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-            
-            .burger.toggle .line2 {
-                opacity: 0;
-            }
-            
-            .burger.toggle .line3 {
-                transform: rotate(45deg) translate(-5px, -6px);
+            .nav-links a:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
             }
 
             .contact-info {
@@ -782,6 +803,12 @@
 
             .contact-section h2 {
                 font-size: 2.5rem;
+            }
+            
+            /* Убедимся, что контент не наезжает на меню */
+            .container {
+                position: relative;
+                z-index: 1;
             }
         }
 
@@ -805,6 +832,10 @@
 
             .logo {
                 font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                width: 85%;
             }
         }
     </style>
@@ -1059,11 +1090,20 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                    
+                    // Закрываем меню после клика на мобильных устройствах
+                    if (window.innerWidth <= 768) {
+                        nav.classList.remove('active');
+                        burger.classList.remove('active');
+                        navLinks.forEach(link => {
+                            link.style.animation = '';
+                        });
+                    }
                 }
             });
         });
 
-        // Бургер-меню
+        // Бургер-меню - ИСПРАВЛЕННЫЙ КОД
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         const navLinks = document.querySelectorAll('.nav-links li');
@@ -1071,6 +1111,9 @@
         burger.addEventListener('click', () => {
             // Переключение навигации
             nav.classList.toggle('active');
+            
+            // Анимация бургера
+            burger.classList.toggle('active');
             
             // Анимация ссылок
             navLinks.forEach((link, index) => {
@@ -1080,20 +1123,33 @@
                     link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
                 }
             });
-            
-            // Анимация бургера
-            burger.classList.toggle('toggle');
         });
 
         // Закрытие меню при клике на ссылку
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
-                burger.classList.remove('toggle');
+                burger.classList.remove('active');
                 navLinks.forEach(link => {
                     link.style.animation = '';
                 });
             });
+        });
+
+        // Закрытие меню при клике вне его области
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const isClickInsideNav = nav.contains(e.target);
+                const isClickOnBurger = burger.contains(e.target);
+                
+                if (!isClickInsideNav && !isClickOnBurger && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    burger.classList.remove('active');
+                    navLinks.forEach(link => {
+                        link.style.animation = '';
+                    });
+                }
+            }
         });
     </script>
 </body>
