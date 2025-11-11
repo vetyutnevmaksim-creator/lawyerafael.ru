@@ -115,20 +115,23 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
             margin-top: 60px;
         }
 
         .team-member {
             background: #fff;
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 50px 35px;
             box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
             transition: all 0.4s ease;
             border: 3px solid transparent;
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: auto;
         }
 
         .team-member.featured {
@@ -148,6 +151,33 @@
             border-color: #dc2626;
         }
 
+        .member-header {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .member-status {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            white-space: nowrap;
+        }
+
+        .team-member.featured .member-status {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+        }
+
         .member-photo {
             position: relative;
             margin-bottom: 25px;
@@ -156,8 +186,8 @@
         }
 
         .member-photo img {
-            width: 220px;
-            height: 280px;
+            width: 240px;
+            height: 300px;
             border-radius: 12px;
             object-fit: cover;
             border: 4px solid #e2e8f0;
@@ -175,39 +205,26 @@
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .member-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            z-index: 10;
-        }
-
         .member-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             color: #1e40af;
             margin-bottom: 8px;
         }
 
         .member-position {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #dc2626;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .member-description {
             color: #64748b;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-align: left;
+            flex-grow: 1;
         }
 
         .member-description ul {
@@ -236,7 +253,7 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .exp-item {
@@ -245,7 +262,7 @@
 
         .exp-number {
             display: block;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: bold;
             color: #dc2626;
             font-family: 'Playfair Display', serif;
@@ -253,7 +270,7 @@
         }
 
         .exp-text {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #64748b;
             font-weight: 500;
         }
@@ -268,9 +285,9 @@
         .specialization-tag {
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             color: #1e40af;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 15px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
             border: 1px solid #dbeafe;
         }
@@ -377,12 +394,12 @@
 
             .team-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
                 margin-top: 40px;
             }
 
             .team-member {
-                padding: 30px 20px;
+                padding: 40px 25px;
                 margin: 0 10px;
             }
 
@@ -395,16 +412,16 @@
             }
 
             .member-photo img {
-                width: 180px;
-                height: 230px;
+                width: 200px;
+                height: 250px;
             }
 
             .member-info h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .member-position {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .member-description {
@@ -416,7 +433,13 @@
             }
 
             .exp-number {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+            }
+
+            .member-status {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+                top: -50px;
             }
         }
 
@@ -434,16 +457,16 @@
             }
 
             .team-member {
-                padding: 25px 15px;
+                padding: 35px 20px;
             }
 
             .member-photo img {
-                width: 150px;
-                height: 200px;
+                width: 170px;
+                height: 220px;
             }
 
             .member-info h3 {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
 
             .member-experience {
@@ -452,32 +475,44 @@
             }
 
             .specialization-tag {
-                font-size: 0.7rem;
-                padding: 4px 8px;
+                font-size: 0.75rem;
+                padding: 6px 10px;
             }
 
             .footer-logo {
                 font-size: 1.5rem;
+            }
+
+            .member-status {
+                font-size: 0.85rem;
+                padding: 7px 14px;
+                top: -45px;
             }
         }
 
         @media (max-width: 360px) {
             .team-member {
                 margin: 0 5px;
-                padding: 20px 10px;
+                padding: 30px 15px;
             }
 
             .member-photo img {
-                width: 130px;
-                height: 170px;
+                width: 150px;
+                height: 190px;
             }
 
             .member-info h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .member-description {
                 font-size: 0.9rem;
+            }
+
+            .member-status {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+                top: -40px;
             }
         }
     </style>
@@ -516,13 +551,15 @@
             <div class="team-grid">
                 <!-- Адвокат Костанян (главный) -->
                 <div class="team-member featured">
+                    <div class="member-header">
+                        <div class="member-status">Адвокат</div>
+                    </div>
                     <div class="member-photo">
                         <img src="kostanyan-photo.jpg" alt="Адвокат Рафаэль Костанян">
-                        <div class="member-badge">Адвокат</div>
                     </div>
                     <div class="member-info">
                         <h3>Рафаэль Костанян</h3>
-                        <p class="member-position">Адвокат</p>
+                        <p class="member-position">Основатель практики</p>
                         <div class="member-description">
                             <ul>
                                 <li>Основатель адвокатского кабинета</li>
@@ -546,13 +583,15 @@
 
                 <!-- Леонид Бекренев -->
                 <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-status">Юрист</div>
+                    </div>
                     <div class="member-photo">
                         <img src="bekrenev-photo.jpg" alt="Леонид Бекренев">
-                        <div class="member-badge">Юрист</div>
                     </div>
                     <div class="member-info">
                         <h3>Леонид Бекренев</h3>
-                        <p class="member-position">Юрист</p>
+                        <p class="member-position">Старший специалист</p>
                         <div class="member-description">
                             <ul>
                                 <li>Специалист по арбитражным спорам</li>
@@ -571,13 +610,15 @@
 
                 <!-- Ветютнев Максим -->
                 <div class="team-member">
+                    <div class="member-header">
+                        <div class="member-status">Младший юрист</div>
+                    </div>
                     <div class="member-photo">
                         <img src="maxim.png" alt="Ветютнев Максим">
-                        <div class="member-badge">Младший юрист</div>
                     </div>
                     <div class="member-info">
                         <h3>Максим Ветютнев</h3>
-                        <p class="member-position">Младший юрист</p>
+                        <p class="member-position">Юрист-аналитик</p>
                         <div class="member-description">
                             <ul>
                                 <li>Выпускник Юридического факультета МГУ им. М.В. Ломоносова</li>
