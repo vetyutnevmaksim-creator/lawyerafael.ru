@@ -138,13 +138,13 @@
         }
 
         .team-member:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
             border-color: #2563eb;
         }
 
         .team-member.featured:hover {
-            transform: translateY(-15px) scale(1.02);
+            transform: translateY(-10px) scale(1.02);
             border-color: #dc2626;
         }
 
@@ -202,6 +202,29 @@
             color: #64748b;
             line-height: 1.6;
             margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .member-description ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .member-description li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .member-description li:before {
+            content: "•";
+            color: #dc2626;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 8px;
+            top: -2px;
         }
 
         .member-experience {
@@ -290,6 +313,21 @@
             color: #94a3b8;
         }
 
+        /* Бургер-меню для мобильных */
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
         /* Адаптивность */
         @media (max-width: 768px) {
             .nav-container {
@@ -298,15 +336,49 @@
             }
 
             .nav-links {
-                gap: 15px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: flex;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+
+            .page-header {
+                padding: 60px 0;
             }
 
             .page-header h1 {
                 font-size: 2.2rem;
             }
 
+            .page-subtitle {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+
+            .team-section {
+                padding: 60px 0;
+            }
+
             .team-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .team-member {
+                padding: 30px 20px;
+                margin: 0 10px;
             }
 
             .team-member.featured {
@@ -314,13 +386,38 @@
             }
 
             .team-member.featured:hover {
-                transform: translateY(-15px);
+                transform: translateY(-10px);
+            }
+
+            .member-photo img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .member-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .member-position {
+                font-size: 1rem;
+            }
+
+            .member-description {
+                font-size: 0.95rem;
+            }
+
+            .member-experience {
+                gap: 20px;
+            }
+
+            .exp-number {
+                font-size: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
             .page-header {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .page-header h1 {
@@ -328,16 +425,54 @@
             }
 
             .team-section {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
             .team-member {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
 
             .member-photo img {
-                width: 140px;
-                height: 140px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .member-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .member-experience {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .specialization-tag {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+
+            .footer-logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .team-member {
+                margin: 0 5px;
+                padding: 20px 10px;
+            }
+
+            .member-photo img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .member-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .member-description {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -352,9 +487,13 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Главная</a></li>
-                <li><a href="cases.html">Конкретные дела</a></li>
                 <li><a href="team.html" style="background: rgba(255, 255, 255, 0.2);">Команда</a></li>
             </ul>
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -378,11 +517,18 @@
                     </div>
                     <div class="member-info">
                         <h3>Рафаэль Костанян</h3>
-                        <p class="member-position">Руководитель практики</p>
-                        <p class="member-description">Основатель адвокатского кабинета. Специализируется на комплексной защите бизнеса, корпоративных спорах и налоговых вопросах. Опыт работы с 2004 года.</p>
+                        <p class="member-position">Адвокат</p>
+                        <div class="member-description">
+                            <ul>
+                                <li>Основатель адвокатского кабинета</li>
+                                <li>Специализируется на комплексной защите бизнеса</li>
+                                <li>Эксперт по корпоративным спорам и налоговым вопросам</li>
+                                <li>Опыт работы с 2004 года</li>
+                            </ul>
+                        </div>
                         <div class="member-experience">
                             <div class="exp-item">
-                                <span class="exp-number">18+</span>
+                                <span class="exp-number">20+</span>
                                 <span class="exp-text">лет практики</span>
                             </div>
                             <div class="exp-item">
@@ -401,8 +547,15 @@
                     </div>
                     <div class="member-info">
                         <h3>Леонид Бекренев</h3>
-                        <p class="member-position">Старший юрист</p>
-                        <p class="member-description">Специалист по арбитражным спорам и банкротству. Отлично зарекомендовал себя в сложных корпоративных конфликтах и делах о банкротстве.</p>
+                        <p class="member-position">Юрист</p>
+                        <div class="member-description">
+                            <ul>
+                                <li>Специалист по арбитражным спорам и банкротству</li>
+                                <li>Отлично зарекомендовал себя в сложных корпоративных конфликтах</li>
+                                <li>Эксперт по делам о банкротстве</li>
+                                <li>Опыт работы в юридической сфере более 10 лет</li>
+                            </ul>
+                        </div>
                         <div class="member-specialization">
                             <span class="specialization-tag">Арбитраж</span>
                             <span class="specialization-tag">Банкротство</span>
@@ -415,12 +568,19 @@
                 <div class="team-member">
                     <div class="member-photo">
                         <img src="vetyutnev-photo.jpg" alt="Ветютнев Максим">
-                        <div class="member-badge">Юрист</div>
+                        <div class="member-badge">Младший юрист</div>
                     </div>
                     <div class="member-info">
                         <h3>Максим Ветютнев</h3>
-                        <p class="member-position">Юрист</p>
-                        <p class="member-description">Выпускник МГУ им. М.В. Ломоносова.</p>
+                        <p class="member-position">Младший юрист</p>
+                        <div class="member-description">
+                            <ul>
+                                <li>Выпускник Юридическиого факультета МГУ им. М.В. Ломоносова</li>
+                                <li>Владелец сертификата IELTS от British Council, подтверждающий совершенный уровень владения английским языком</li>
+                                <li>Отвечает за сопровождение сделок и договорную работу</li>
+                                <li>Опыт работы в юридической практике более 3 лет</li>
+                            </ul>
+                        </div>
                         <div class="member-specialization">
                             <span class="specialization-tag">Гражданские споры</span>
                             <span class="specialization-tag">Правовой аудит</span>
@@ -444,5 +604,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Бургер-меню для мобильных
+        const burger = document.getElementById('burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
