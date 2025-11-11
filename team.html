@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша команда - Адвокат Рафаэль Костанян</title>
+    <meta name="description" content="Профессиональная команда адвокатов и юристов. Рафаэль Костанян, Леонид Бекренев, Максим Ветютнев.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Навигация */
+        nav {
+            background: linear-gradient(135deg, #1e40af 0%, #dc2626 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Шапка страницы */
+        .page-header {
+            background: linear-gradient(135deg, #eff6ff 0%, #fef2f2 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 4px solid #dc2626;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Команда */
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            text-align: center;
+            position: relative;
+        }
+
+        .team-member.featured {
+            border-color: #dc2626;
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.15);
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+            border-color: #2563eb;
+        }
+
+        .team-member.featured:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: #dc2626;
+        }
+
+        .member-photo {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .member-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .team-member.featured .member-photo img {
+            border-color: #dc2626;
+        }
+
+        .team-member:hover .member-photo img {
+            border-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .member-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .member-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .member-position {
+            font-size: 1.1rem;
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .member-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .member-experience {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .exp-item {
+            text-align: center;
+        }
+
+        .exp-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #dc2626;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .exp-text {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .member-specialization {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .specialization-tag {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #1e40af;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Подвал */
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #374151 100%);
+            color: #cbd5e1;
+            padding: 50px 0 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member.featured {
+                transform: none;
+            }
+
+            .team-member.featured:hover {
+                transform: translateY(-15px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 60px 0;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .team-section {
+                padding: 60px 0;
+            }
+
+            .team-member {
+                padding: 30px 20px;
+            }
+
+            .member-photo img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Логотип" class="logo-img">
+                <a href="index.html" class="logo">Адвокат Рафаэль Костанян</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="cases.html">Конкретные дела</a></li>
+                <li><a href="team.html" style="background: rgba(255, 255, 255, 0.2);">Команда</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Шапка страницы -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Наша команда</h1>
+            <p class="page-subtitle">Профессионалы с многолетним опытом в защите бизнеса и корпоративных спорах</p>
+        </div>
+    </header>
+
+    <!-- Команда -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-grid">
+                <!-- Адвокат Костанян (главный) -->
+                <div class="team-member featured">
+                    <div class="member-photo">
+                        <img src="kostanyan-photo.jpg" alt="Адвокат Рафаэль Костанян">
+                        <div class="member-badge">Адвокат</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Рафаэль Костанян</h3>
+                        <p class="member-position">Руководитель практики</p>
+                        <p class="member-description">Основатель адвокатского кабинета. Специализируется на комплексной защите бизнеса, корпоративных спорах и налоговых вопросах. Опыт работы с 2004 года.</p>
+                        <div class="member-experience">
+                            <div class="exp-item">
+                                <span class="exp-number">18+</span>
+                                <span class="exp-text">лет практики</span>
+                            </div>
+                            <div class="exp-item">
+                                <span class="exp-number">95%</span>
+                                <span class="exp-text">успешных дел</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Леонид Бекренев -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="bekrenev-photo.jpg" alt="Леонид Бекренев">
+                        <div class="member-badge">Юрист</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Леонид Бекренев</h3>
+                        <p class="member-position">Старший юрист</p>
+                        <p class="member-description">Специалист по арбитражным спорам и банкротству. Отлично зарекомендовал себя в сложных корпоративных конфликтах и делах о банкротстве.</p>
+                        <div class="member-specialization">
+                            <span class="specialization-tag">Арбитраж</span>
+                            <span class="specialization-tag">Банкротство</span>
+                            <span class="specialization-tag">ГОЗ споры</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ветютнев Максим -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="vetyutnev-photo.jpg" alt="Ветютнев Максим">
+                        <div class="member-badge">Юрист</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Максим Ветютнев</h3>
+                        <p class="member-position">Юрист</p>
+                        <p class="member-description">Выпускник МГУ им. М.В. Ломоносова.</p>
+                        <div class="member-specialization">
+                            <span class="specialization-tag">Гражданские споры</span>
+                            <span class="specialization-tag">Правовой аудит</span>
+                            <span class="specialization-tag">Договоры</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="footer-logo-img">
+                    <a href="index.html" class="footer-logo">Адвокат Рафаэль Костанян</a>
+                </div>
+                <p class="copyright">&copy; 2024 Адвокатский кабинет Рафаэля Костаняна. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
