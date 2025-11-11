@@ -151,15 +151,18 @@
         .member-photo {
             position: relative;
             margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
         }
 
         .member-photo img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
+            width: 220px;
+            height: 280px;
+            border-radius: 12px;
             object-fit: cover;
             border: 4px solid #e2e8f0;
             transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .team-member.featured .member-photo img {
@@ -169,12 +172,13 @@
         .team-member:hover .member-photo img {
             border-color: #2563eb;
             transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .member-badge {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             background: linear-gradient(135deg, #dc2626, #b91c1c);
             color: white;
             padding: 6px 12px;
@@ -182,6 +186,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
+            z-index: 10;
         }
 
         .member-info h3 {
@@ -390,8 +395,8 @@
             }
 
             .member-photo img {
-                width: 150px;
-                height: 150px;
+                width: 180px;
+                height: 230px;
             }
 
             .member-info h3 {
@@ -433,8 +438,8 @@
             }
 
             .member-photo img {
-                width: 120px;
-                height: 120px;
+                width: 150px;
+                height: 200px;
             }
 
             .member-info h3 {
@@ -463,8 +468,8 @@
             }
 
             .member-photo img {
-                width: 100px;
-                height: 100px;
+                width: 130px;
+                height: 170px;
             }
 
             .member-info h3 {
@@ -517,7 +522,7 @@
                     </div>
                     <div class="member-info">
                         <h3>Рафаэль Костанян</h3>
-                        <p class="member-position">Адвокат</p>
+                        <p class="member-position">Руководитель практики</p>
                         <div class="member-description">
                             <ul>
                                 <li>Основатель адвокатского кабинета</li>
@@ -528,7 +533,7 @@
                         </div>
                         <div class="member-experience">
                             <div class="exp-item">
-                                <span class="exp-number">20+</span>
+                                <span class="exp-number">18+</span>
                                 <span class="exp-text">лет практики</span>
                             </div>
                             <div class="exp-item">
@@ -547,7 +552,7 @@
                     </div>
                     <div class="member-info">
                         <h3>Леонид Бекренев</h3>
-                        <p class="member-position">Юрист</p>
+                        <p class="member-position">Старший юрист</p>
                         <div class="member-description">
                             <ul>
                                 <li>Специалист по арбитражным спорам и банкротству</li>
@@ -567,18 +572,18 @@
                 <!-- Ветютнев Максим -->
                 <div class="team-member">
                     <div class="member-photo">
-                        <img src="maxim.png" alt="Ветютнев Максим">
-                        <div class="member-badge">Младший юрист</div>
+                        <img src="vetyutnev-photo.jpg" alt="Ветютнев Максим">
+                        <div class="member-badge">Юрист</div>
                     </div>
                     <div class="member-info">
                         <h3>Максим Ветютнев</h3>
-                        <p class="member-position">Младший юрист</p>
+                        <p class="member-position">Юрист</p>
                         <div class="member-description">
                             <ul>
-                                <li>Выпускник Юридическиого факультета МГУ им. М.В. Ломоносова</li>
-                                <li>Владелец сертификата IELTS от British Council, подтверждающий совершенный уровень владения английским языком</li>
+                                <li>Эксперт по гражданским спорам и правовому аудиту</li>
                                 <li>Отвечает за сопровождение сделок и договорную работу</li>
-                                <li>Опыт работы в юридической практике более 3 лет</li>
+                                <li>Специализируется на юридическом консалтинге</li>
+                                <li>Опыт работы в юридической практике более 8 лет</li>
                             </ul>
                         </div>
                         <div class="member-specialization">
