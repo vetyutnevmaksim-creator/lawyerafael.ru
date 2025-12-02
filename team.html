@@ -126,7 +126,7 @@
             display: flex;
             justify-content: center;
             max-width: 800px; /* Ограничиваем ширину */
-            margin: 0 auto;
+            margin: 80px auto 0; /* Добавил большой отступ сверху */
         }
 
         .team-member {
@@ -384,6 +384,7 @@
             
             .third-member-container {
                 max-width: 100%;
+                margin-top: 60px; /* Уменьшим отступ на мобильных */
             }
             
             .third-member-container .team-member {
@@ -492,6 +493,10 @@
             .team-member.featured .member-status {
                 font-size: 1.2rem;
             }
+            
+            .third-member-container {
+                margin-top: 40px;
+            }
         }
 
         @media (max-width: 580px) {
@@ -570,6 +575,10 @@
             .member-description li {
                 font-size: 0.95rem;
             }
+            
+            .third-member-container {
+                margin-top: 30px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -595,6 +604,10 @@
                 font-size: 0.9rem;
                 padding: 7px 14px;
                 top: -45px;
+            }
+            
+            .third-member-container {
+                margin-top: 20px;
             }
         }
     </style>
