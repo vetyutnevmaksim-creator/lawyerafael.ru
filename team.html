@@ -115,18 +115,9 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
             margin-top: 60px;
-        }
-
-        /* Контейнер для третьего члена команды */
-        .third-member-container {
-            grid-column: 1 / -1; /* Занимает все колонки */
-            display: flex;
-            justify-content: center;
-            max-width: 800px; /* Ограничиваем ширину */
-            margin: 80px auto 0; /* Добавил большой отступ сверху */
         }
 
         .team-member {
@@ -142,11 +133,6 @@
             flex-direction: column;
             height: auto;
             min-height: 850px;
-        }
-
-        /* Для третьего члена команды */
-        .third-member-container .team-member {
-            min-height: 800px;
         }
 
         .team-member.featured {
@@ -371,6 +357,18 @@
         }
 
         /* Адаптивность */
+        @media (max-width: 1300px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+            
+            .team-member {
+                min-height: auto;
+                padding: 50px 35px;
+            }
+        }
+
         @media (max-width: 1100px) {
             .team-grid {
                 grid-template-columns: 1fr;
@@ -380,15 +378,8 @@
             .team-member {
                 min-height: auto;
                 padding: 50px 35px;
-            }
-            
-            .third-member-container {
-                max-width: 100%;
-                margin-top: 60px; /* Уменьшим отступ на мобильных */
-            }
-            
-            .third-member-container .team-member {
-                min-height: auto;
+                max-width: 800px;
+                margin: 0 auto;
             }
         }
 
@@ -493,10 +484,6 @@
             .team-member.featured .member-status {
                 font-size: 1.2rem;
             }
-            
-            .third-member-container {
-                margin-top: 40px;
-            }
         }
 
         @media (max-width: 580px) {
@@ -575,10 +562,6 @@
             .member-description li {
                 font-size: 0.95rem;
             }
-            
-            .third-member-container {
-                margin-top: 30px;
-            }
         }
 
         @media (max-width: 360px) {
@@ -604,10 +587,6 @@
                 font-size: 0.9rem;
                 padding: 7px 14px;
                 top: -45px;
-            }
-            
-            .third-member-container {
-                margin-top: 20px;
             }
         }
     </style>
@@ -702,10 +681,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Ветютнев Максим - теперь в отдельном контейнере -->
-            <div class="third-member-container">
+
+                <!-- Ветютнев Максим -->
                 <div class="team-member">
                     <div class="member-header">
                         <div class="member-status">Младший юрист</div>
